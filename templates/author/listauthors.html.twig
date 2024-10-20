@@ -6,6 +6,7 @@
     <title>List of Authors</title>
 </head>
 <body>
+    {% set total_books = 0 %}
     <h1>List of Authors</h1>
     <table border="1" cellpadding="10">
         <thead>
@@ -17,6 +18,7 @@
         </thead>
         <tbody>
             {% for author in authors %}
+            {% set total_books = total_books + author.nbrBooks %}
             <tr>
                 <td>{{ author.authorName }}</td>
                 <td><img src="{{ asset(author.picture) }}" alt="Picture of {{ author.authorName }}" style="width:100px;"></td>
@@ -25,5 +27,6 @@
             {% endfor %}
         </tbody>
     </table>
+    <p>Total number of books: {{ total_books }}</p>
 </body>
 </html>

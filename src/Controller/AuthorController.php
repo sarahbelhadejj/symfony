@@ -33,4 +33,5 @@ class AuthorController extends AbstractController
             'authors' => $authors
         ]);
     }
+    
 }
